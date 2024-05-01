@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Calculatrice</title>
+</head>
+
+<body>
+    <div class="calculator">
+        <div>
+            <h1 class="afficheur"></h1>
+        </div>
+        <div class="clavier">
+            <div class="number">
+                <button onclick="ajouterNumero(0)">0</button>
+                <button onclick="ajouterNumero(1)">1</button>
+                <button onclick="ajouterNumero(2)">2</button>
+                <button onclick="ajouterNumero(3)">3</button>
+                <button onclick="ajouterNumero(4)">4</button>
+                <button onclick="ajouterNumero(5)">5</button>
+                <button onclick="ajouterNumero(6)">6</button>
+                <button onclick="ajouterNumero(7)">7</button>
+                <button onclick="ajouterNumero(8)">8</button>
+                <button onclick="ajouterNumero(9)">9</button>
+            </div>
+            <div class="sign">
+                <button onclick="ajouterSigne('/')">/</button>
+                <button onclick="ajouterSigne('-')">-</button>
+                <button onclick="ajouterSigne('+')">+</button>
+                <button onclick="ajouterSigne('*')">*</button>
+                <button onclick="calculResult()">=</button>
+                <button onclick="suppression()">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
