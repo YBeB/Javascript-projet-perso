@@ -10,11 +10,11 @@ function soustraction(a, b) {
   return a - b;
 }
 function division(a, b) {
-  if(a ==0||b==0){
-    alert('can/t divide by 0')
-
-  }else{
-  return a / b;}
+  if (a == 0 || b == 0) {
+    alert("can't divide by 0");
+  } else {
+    return a / b;
+  }
 }
 
 function afficheur() {
