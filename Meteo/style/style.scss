@@ -1,0 +1,45 @@
+
+$background: linear-gradient(to right, #ffffff, #0a3d62); 
+$h-color: #0a3d62;  
+$button-color: #0a3d62;  
+$button-hover: #ffffff;  
+body {
+    background: $background;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+}
+
+h1, h2, h3 {
+    color: $h-color;
+}
+
+button {
+    background-color: $button-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: $button-hover;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.conver-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+

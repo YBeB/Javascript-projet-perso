@@ -1,0 +1,42 @@
+$beige: #d0b69f; 
+$dark-gray: #404040; 
+$taupe: #a89c91;
+$border-color: #b8a58c; 
+$accent-color: #6d9b8d; 
+
+body {
+    background-color: $beige;
+    font-family: "Garamond";
+    color: $dark-gray; 
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    color: #e2f5fb; 
+}
+
+.header-element {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: $taupe; 
+}
+
+span {
+    padding: 3px;
+}
+
+input {
+    width: 500px;
+    border: 1px solid $border-color; 
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+}
+
+.ToDoListLineA {
+    display: flex;
+}

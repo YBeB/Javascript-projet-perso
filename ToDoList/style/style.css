@@ -1,0 +1,36 @@
+body {
+  background-color: #d0b69f;
+  font-family: "Garamond";
+  color: #404040;
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  color: #e2f5fb;
+}
+
+.header-element {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  color: #a89c91;
+}
+
+span {
+  padding: 3px;
+}
+
+input {
+  width: 500px;
+  border: 1px solid #b8a58c;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.ToDoListLineA {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
