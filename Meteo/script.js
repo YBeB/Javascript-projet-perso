@@ -8,30 +8,36 @@ async function fetchData(url) {
       throw new Error("Impossible de charger les données");
     }
 
-    const data= await response.json();
-    console.log(data)
-    return data.location;
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Erreur lors du chargement du JSON", error);
     return null;
   }
 }
 
-async function displayData(data){
-let countryMeteo=document.querySelector(".localisation");
-let imageMeteo=document.createElement("img")
+async function displayData() {
+  let countryweather = document.querySelector(".weather-time");
+  let imageweather = document.querySelector(".mini-icone");
+  let weatherInfo = document.querySelector(".weather-info");
+  let townWeather = document.querySelector(".town-weather");
+  let weatherData = await fetchData(url);
+  let weatherLocation = weatherData.location;
+  let weatherCurrent = weatherData.current;
+  let weatherCondition = weatherCurrent.condition;
+  imageweather.src = `${weatherCondition.icon}`;
+  imageweather.style.width='95px'
+  if (weatherData) {
+    townWeather.textContent = `${weatherLocation.name},${weatherLocation.region}`;
 
-let meteoData=await fetchData(url);
-if (meteoData){
-countryMeteo.textContent=`${meteoData.country},${meteoData.region},${meteoData.localtime}`
+    countryweather.textContent = `${weatherLocation.localtime},${weatherCurrent.temp_c}°C`;
+    weatherInfo.appendChild(townWeather);
+  } else {
+    countryweather.textContent = `No info`;
+  }
 }
 
-
-
-
-
-
-
-}
-
-displayData()
+document.addEventListener("DOMContentLoaded", function () {
+  displayData();
+  setInterval(displayData, 30000);
+});
