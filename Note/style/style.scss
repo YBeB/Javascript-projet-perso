@@ -1,0 +1,116 @@
+// Couleurs principales
+$primary-color: #F9B234; // jaune-orange du logo
+$light-primary: #FFD564; // teinte plus claire pour la navigation
+$text-dark: #333; // couleur de texte principale
+$background-color: #fff; // couleur de fond principale
+$link-color: $primary-color; // couleur des liens
+
+// Base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-dark;
+}
+
+header {
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+
+  .icone {
+    width: 150px;
+    height: 150px;
+    display: flex;
+  }
+
+}
+
+
+nav {
+  background-color: $light-primary;
+  padding: 10px 20px;
+
+  a {
+    color: $text-dark;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 10px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+
+footer {
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+
+section {
+  padding: 20px;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+
+h1,
+h2,
+h3 {
+  color: $text-dark;
+}
+
+
+button {
+  background-color: $light-primary;
+  color: $text-dark;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $light-primary;
+  }
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFFBCC;
+  color: #333333;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+  width: 600px;
+  height: 600px;
+}
+.alert_paragraph{
+display: none;
+color:red;
+
+}
