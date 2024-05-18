@@ -1,36 +1,76 @@
 let createButton = document.getElementById("create");
-let creationNote = document.querySelector(".creation_note");
 
+// Fonction création de note
 function createNote() {
-  let notesSelect = document.getElementById("notes");
-  let textCont = notesSelect.value;
-  let alertMessage = document.querySelector(".alert_paragraph");
-  let allNotes = document.getElementById("all_notes");
+  let textAreaValue = document.getElementById("notes").value;
+  let errorMessage = document.querySelector(".alert_paragraph");
+  console.log(textAreaValue);
+  let getNoteStorage = localStorage.getItem("note");
 
-  console.log(textCont);
-  if (textCont == "") {
-    notesSelect.style.border = "red 2px solid";
-    alertMessage.style.display = "block";
+  let parsedNotesStorage = JSON.parse(getNoteStorage);
+  if (parsedNotesStorage == null) {
+    parsedNotesStorage = [];
+  }
+
+  if (textAreaValue == "") {
+    errorMessage.style.display = "block";
+    document.getElementById("notes").style.border = "red 1px solid";
   } else {
-    notesSelect.style.border = "1px black solid";
-    let divNotes = document.createElement("div");
-    divNotes.classList.add("note");
-    let textNotes = document.createElement("p");
-    let deleteButton = document.createElement("button");
-    alertMessage.style.display = "none";
+    errorMessage.style.display = "none";
+    document.getElementById("notes").style.border = "black 1px solid";
+    parsedNotesStorage.push(textAreaValue);
+    localStorage.setItem("note", JSON.stringify(parsedNotesStorage));
+    document.getElementsByName("notes")[0].value = "";
 
-    let savedNote = [];
-    allNotes.appendChild(divNotes);
-    divNotes.appendChild(textNotes);
-    divNotes.appendChild(deleteButton);
+    location.reload();
+  }
+}
+// Fonction delete de note
+function deleteNote(noteToDelete) {
+  let getNoteStorage = localStorage.getItem("note");
+  let parsedNotesStorage = JSON.parse(getNoteStorage);
+  if (parsedNotesStorage == null) {
+    parsedNotesStorage = [];
+  }
+  let index = parsedNotesStorage.findIndex(
+    (note) => note.text === noteToDelete.text
+  );
+  //.text car ce sont des objet et pas des chaine de caractere , si string , pas de .text
+  console.log(index);
+  //index était a -1 car il ne trouvais pas l'index correspondant donc apres le .text
+  console.log(noteToDelete);
+  console.log(parsedNotesStorage);
+
+  if (index !== -1) {
+    parsedNotesStorage.splice(index, 1);
+    localStorage.setItem("note", JSON.stringify(parsedNotesStorage));
+
+    location.reload();
   }
 }
 
-function deleteNote() {}
+// Fonction affichage de note
+function displayNotes() {
+  let allNotes = document.getElementById("all_notes");
+  let getNoteStorage = localStorage.getItem("note");
+  let parsedNotesStorage = JSON.parse(getNoteStorage);
+  if (parsedNotesStorage == null) {
+    parsedNotesStorage = [];
+  }
 
+  parsedNotesStorage.forEach((note) => {
+    let noteDiv = document.createElement("div");
+    noteDiv.classList.add("note");
+    let noteParagraph = document.createElement("p");
+    noteParagraph.textContent = note;
+    let deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Supprimer";
+    deleteButton.addEventListener("click", deleteNote);
+    allNotes.appendChild(noteDiv);
+    noteDiv.appendChild(noteParagraph);
+    noteDiv.appendChild(deleteButton);
+  });
+}
+
+window.onload = displayNotes();
 createButton.addEventListener("click", createNote);
-
-/* <div class="note">
-<p> test</p>
-<button id="delete">Supprimer la note</button>
-</div> */
