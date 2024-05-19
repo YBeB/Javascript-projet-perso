@@ -18,7 +18,7 @@ function createNote() {
   } else {
     errorMessage.style.display = "none";
     document.getElementById("notes").style.border = "black 1px solid";
-    parsedNotesStorage.push(textAreaValue);
+    parsedNotesStorage.push({ text: textAreaValue });
     localStorage.setItem("note", JSON.stringify(parsedNotesStorage));
     document.getElementsByName("notes")[0].value = "";
 
@@ -32,6 +32,7 @@ function deleteNote(noteToDelete) {
   if (parsedNotesStorage == null) {
     parsedNotesStorage = [];
   }
+  console.log("Type de noteToDelete:", typeof noteToDelete);
   let index = parsedNotesStorage.findIndex(
     (note) => note.text === noteToDelete.text
   );
@@ -44,7 +45,6 @@ function deleteNote(noteToDelete) {
   if (index !== -1) {
     parsedNotesStorage.splice(index, 1);
     localStorage.setItem("note", JSON.stringify(parsedNotesStorage));
-
     location.reload();
   }
 }
@@ -62,10 +62,12 @@ function displayNotes() {
     let noteDiv = document.createElement("div");
     noteDiv.classList.add("note");
     let noteParagraph = document.createElement("p");
-    noteParagraph.textContent = note;
+    noteParagraph.textContent = note.text;
     let deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Supprimer";
-    deleteButton.addEventListener("click", deleteNote);
+    deleteButton.addEventListener("click", () => {
+      deleteNote(note);
+    });
     allNotes.appendChild(noteDiv);
     noteDiv.appendChild(noteParagraph);
     noteDiv.appendChild(deleteButton);
