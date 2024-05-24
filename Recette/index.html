@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap">
+    <title>Recette</title>
+</head>
+
+<body>
+    <header><img src="./assets/recette.png" width="220px">
+    </header>
+    <section id="create_recipe">
+        <div class="flex-content">
+            <input type="text" id="recipe_title" placeholder="Le nom de la recette">
+            <p class="error title"> Le nom de la recette doit être remplis 👆 </p>
+            <input type="text" id="recipe_ingredient" placeholder="Les p'tits ingredients">
+            <p class="error ingredient"> Les p'tits ingredients doivent être indiqué 👆 </p>
+            <input type="text" id="recipe_step" placeholder="les zétapes">
+            <p class="error step"> les zétapes doivent être remplis 👆 </p>
+            <button id="create">Créer</button>
+
+        </div>
+    </section>
+    <section id="show_recipe">
+        <div class="card-recipe">
+            <h1>Tarte a la fraise</h1>
+            <ul>
+
+                <li class="recipe">Pate feuilleté</li>
+                <li class="recipe">Fraise</li>
+                <li class="recipe">Sucre</li>
+                <li class="recipe">Beurre</li>
+                <li class="recipe">Farine</li>
+                <li class="recipe">Eau</li>
+            </ul>
+            <ul>
+                <li class="step">
+                    PÂTE: Blanchir les jaunes et le sucre au fouet et détendre le mélange avec un peu d'eau.</li>
+                <li class="step">
+                    Mélanger au doigt la farine et le beurre coupé en petites parcelles pour obtenir une consistance
+                    sableuse et que tout le beurre soit absorbé (!!! Il faut faire vite pour que le mélange ne
+                    ramollisse pas trop!).</li>
+                <li class="step">
+                    Verser au milieu de ce "sable" le mélange liquide. Incorporer au couteau les éléments rapidement
+                    sans leur donner de corps.</li>
+                <li class="step">
+                    Former une boule avec les paumes et fraiser 1 ou 2 fois pour rendre la boule + homogène.</li>
+                <li class="step">
+                    Foncer un moule de 25 cm de diamètre avec la pâte, garnissez la de papier sulfurisé et de haricots
+                    secs. Faire cuire à blanc 20 à 25 min, à 180°C (thermostat 6).</li>
+                <li class="step">
+                    CRÈME PÂTISSIÈRE : Mettre le lait à bouillir avec le parfum choisi (vanille ou autre).</li>
+                <li class="step">
+                    Travailler l'oeuf avec le sucre jusqu'à ce que la pâte fasse le ruban, ajouter la farine.</li>
+                <li class="step">
+                    Verser le lait bouillant sur le mélange en tournant bien.</li>
+                <li class="step">
+                    Remettre dans la casserole sur le feu. Faire cuire en tournant très soigneusement. Retirer après
+                    ébullition.</li>
+
+                <li class="step">
+                    Verser la crème sur le fond de tarte et disposer joliment les fraises coupées en 2.</li>
+
+            </ul>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

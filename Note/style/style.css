@@ -68,7 +68,12 @@ button:hover {
   background-color: #F9B234;
 }
 
-
+a {
+  color: #F9B234;
+}
+a:hover {
+  color: #FFD564;
+}
 
 .note {
   display: flex;
@@ -80,10 +85,9 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  margin: 10px;
+  margin-bottom: 10px;
   width: 500px;
   height: 600px;
-
 }
 
 .alert_paragraph {
