@@ -1,0 +1,396 @@
+{
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Superman",
+      "secretIdentity": "Clark Kent",
+      "age": 35,
+      "portrait": "superman.jpg",
+      "rentalPoints": 500
+    },
+    {
+      "id": 2,
+      "name": "Batman",
+      "secretIdentity": "Bruce Wayne",
+      "age": 40,
+      "portrait": "batman.jpg",
+      "rentalPoints": 400
+    },
+    {
+      "id": 3,
+      "name": "Spider-Man",
+      "secretIdentity": "Peter Parker",
+      "age": 25,
+      "portrait": "spiderman.jpg",
+      "rentalPoints": 300
+    },
+    {
+      "id": 4,
+      "name": "Wonder Woman",
+      "secretIdentity": "Diana Prince",
+      "age": 3000,
+      "portrait": "wonderwoman.jpg",
+      "rentalPoints": 450
+    },
+    {
+      "id": 5,
+      "name": "Iron Man",
+      "secretIdentity": "Tony Stark",
+      "age": 45,
+      "portrait": "ironman.jpg",
+      "rentalPoints": 500
+    },
+    {
+      "id": 6,
+      "name": "Captain America",
+      "secretIdentity": "Steve Rogers",
+      "age": 100,
+      "portrait": "captainamerica.jpg",
+      "rentalPoints": 400
+    },
+    {
+      "id": 7,
+      "name": "The Flash",
+      "secretIdentity": "Barry Allen",
+      "age": 30,
+      "portrait": "theflash.jpg",
+      "rentalPoints": 350
+    },
+    {
+      "id": 8,
+      "name": "Green Lantern",
+      "secretIdentity": "Hal Jordan",
+      "age": 35,
+      "portrait": "greenlantern.jpg",
+      "rentalPoints": 300
+    },
+    {
+      "id": 9,
+      "name": "Thor",
+      "secretIdentity": "Donald Blake",
+      "age": 1500,
+      "portrait": "thor.jpg",
+      "rentalPoints": 450
+    },
+    {
+      "id": 10,
+      "name": "Black Widow",
+      "secretIdentity": "Natasha Romanoff",
+      "age": 35,
+      "portrait": "blackwidow.jpg",
+      "rentalPoints": 350
+    },
+    {
+      "id": 11,
+      "name": "Hulk",
+      "secretIdentity": "Bruce Banner",
+      "age": 45,
+      "portrait": "hulk.jpg",
+      "rentalPoints": 500
+    },
+    {
+      "id": 12,
+      "name": "Aquaman",
+      "secretIdentity": "Arthur Curry",
+      "age": 35,
+      "portrait": "aquaman.jpg",
+      "rentalPoints": 400
+    },
+    {
+      "id": 13,
+      "name": "Doctor Strange",
+      "secretIdentity": "Stephen Strange",
+      "age": 45,
+      "portrait": "doctorstrange.jpg",
+      "rentalPoints": 450
+    },
+    {
+      "id": 14,
+      "name": "Scarlet Witch",
+      "secretIdentity": "Wanda Maximoff",
+      "age": 30,
+      "portrait": "scarletwitch.jpg",
+      "rentalPoints": 400
+    },
+    {
+      "id": 15,
+      "name": "Black Panther",
+      "secretIdentity": "T'Challa",
+      "age": 35,
+      "portrait": "blackpanther.jpg",
+      "rentalPoints": 450
+    }
+  ],
+  "powers": [
+    {
+      "id": 101,
+      "heroId": 1,
+      "power": "Super strength",
+      "image": "super_strength.jpg"
+    },
+    {
+      "id": 102,
+      "heroId": 1,
+      "power": "Flight",
+      "image": "flight.jpg"
+    },
+    {
+      "id": 103,
+      "heroId": 1,
+      "power": "Heat vision",
+      "image": "heat_vision.jpg"
+    },
+    {
+      "id": 104,
+      "heroId": 2,
+      "power": "Martial arts",
+      "image": "martial_arts.jpg"
+    },
+    {
+      "id": 105,
+      "heroId": 2,
+      "power": "High intelligence",
+      "image": "high_intelligence.jpg"
+    },
+    {
+      "id": 106,
+      "heroId": 2,
+      "power": "Stealth",
+      "image": "stealth.jpg"
+    },
+    {
+      "id": 107,
+      "heroId": 3,
+      "power": "Wall-crawling",
+      "image": "wall_crawling.jpg"
+    },
+    {
+      "id": 108,
+      "heroId": 3,
+      "power": "Spider-sense",
+      "image": "spider_sense.jpg"
+    },
+    {
+      "id": 109,
+      "heroId": 3,
+      "power": "Super agility",
+      "image": "super_agility.jpg"
+    },
+    {
+      "id": 110,
+      "heroId": 4,
+      "power": "Super strength",
+      "image": "super_strength.jpg"
+    },
+    {
+      "id": 111,
+      "heroId": 4,
+      "power": "Flight",
+      "image": "flight.jpg"
+    },
+    {
+      "id": 112,
+      "heroId": 4,
+      "power": "Martial arts",
+      "image": "martial_arts.jpg"
+    },
+    {
+      "id": 113,
+      "heroId": 5,
+      "power": "Powered armor suit",
+      "image": "powered_armor.jpg"
+    },
+    {
+      "id": 114,
+      "heroId": 5,
+      "power": "High intelligence",
+      "image": "high_intelligence.jpg"
+    },
+    {
+      "id": 115,
+      "heroId": 5,
+      "power": "Energy repulsors",
+      "image": "energy_repulsors.jpg"
+    },
+    {
+      "id": 116,
+      "heroId": 6,
+      "power": "Super strength",
+      "image": "super_strength.jpg"
+    },
+    {
+      "id": 117,
+      "heroId": 6,
+      "power": "Super agility",
+      "image": "Super agility.jpg"
+    },
+    {
+      "id": 118,
+      "heroId": 6,
+      "power": "Strategic Combat Genius",
+      "image": "strategic_combat_genius.jpg"
+    },
+    {
+      "id": 119,
+      "heroId": 7,
+      "power": "Super speed",
+      "image": "super_speed.jpg"
+    },
+    {
+      "id": 120,
+      "heroId": 7,
+      "power": "Time travel",
+      "image": "time_travel.jpg"
+    },
+    {
+      "id": 121,
+      "heroId": 7,
+      "power": "Phasing through objects",
+      "image": "phasing_objects.jpg"
+    },
+    {
+      "id": 122,
+      "heroId": 8,
+      "power": "Power ring",
+      "image": "power_ring.jpg"
+    },
+    {
+      "id": 123,
+      "heroId": 8,
+      "power": "Energy constructs",
+      "image": "energy_constructs.jpg"
+    },
+    {
+      "id": 124,
+      "heroId": 8,
+      "power": "Flight",
+      "image": "flight.jpg"
+    },
+    {
+      "id": 125,
+      "heroId": 9,
+      "power": "Godly strength",
+      "image": "godly_strength.jpg"
+    },
+    {
+      "id": 126,
+      "heroId": 9,
+      "power": "Control over lightning",
+      "image": "control_lightning.jpg"
+    },
+    {
+      "id": 127,
+      "heroId": 9,
+      "power": "Flight",
+      "image": "flight.jpg"
+    },
+    {
+      "id": 128,
+      "heroId": 10,
+      "power": "Martial arts",
+      "image": "martial_arts.jpg"
+    },
+    {
+      "id": 129,
+      "heroId": 10,
+      "power": "Master spy",
+      "image": "master_spy.jpg"
+    },
+    {
+      "id": 130,
+      "heroId": 10,
+      "power": "Super agility",
+      "image": "super_agility.jpg"
+    },
+    {
+      "id": 131,
+      "heroId": 11,
+      "power": "Super strength",
+      "image": "super_strength.jpg"
+    },
+    {
+      "id": 132,
+      "heroId": 11,
+      "power": "Regeneration",
+      "image": "regeneration.jpg"
+    },
+    {
+      "id": 133,
+      "heroId": 11,
+      "power": "Limitless stamina",
+      "image": "limitless_stamina.jpg"
+    },
+    {
+      "id": 134,
+      "heroId": 12,
+      "power": "Underwater breathing",
+      "image": "underwater_breathing.jpg"
+    },
+    {
+      "id": 135,
+      "heroId": 12,
+      "power": "Super strength",
+      "image": "super_strength.jpg"
+    },
+    {
+      "id": 136,
+      "heroId": 12,
+      "power": "Communication with sea life",
+      "image": "communication_sea_life.jpg"
+    },
+    {
+      "id": 137,
+      "heroId": 13,
+      "power": "Magic",
+      "image": "magic.jpg"
+    },
+    {
+      "id": 138,
+      "heroId": 13,
+      "power": "Astral projection",
+      "image": "astral_projection.jpg"
+    },
+    {
+      "id": 139,
+      "heroId": 13,
+      "power": "Time manipulation",
+      "image": "time_manipulation.jpg"
+    },
+    {
+      "id": 140,
+      "heroId": 14,
+      "power": "Reality manipulation",
+      "image": "reality_manipulation.jpg"
+    },
+    {
+      "id": 141,
+      "heroId": 14,
+      "power": "Telekinesis",
+      "image": "telekinesis.jpg"
+    },
+    {
+      "id": 142,
+      "heroId": 14,
+      "power": "Energy blasts",
+      "image": "energy_blasts.jpg"
+    },
+    {
+      "id": 143,
+      "heroId": 15,
+      "power": "Super strength",
+      "image": "super_strength.jpg"
+    },
+    {
+      "id": 144,
+      "heroId": 15,
+      "power": "Super agility",
+      "image": "super_agility.jpg"
+    },
+    {
+      "id": 145,
+      "heroId": 15,
+      "power": "Vibranium suit",
+      "image": "vibranium_suit.jpg"
+    }
+  ]
+}
