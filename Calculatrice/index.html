@@ -4,61 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Calculatrice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="calculator">
-        <div>
-            <h1 class="afficheur"></h1>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="calculator w-80 bg-white rounded-lg shadow-lg p-4">
+        <!-- Afficheur -->
+        <div class="afficheur bg-gray-200 text-right text-2xl font-bold p-4 rounded mb-4">
+            <h1 id="afficheur">0</h1>
         </div>
-        <div class="clavier">
-            <div class="number">
-                <button onclick="ajouterNumero(0)">
-                    <p>0</p>
-                </button>
-                <button onclick="ajouterNumero(1)">
-                    <p>1</p>
-                </button>
-                <button onclick="ajouterNumero(2)">
-                    <p>2</p>
-                </button>
-                <button onclick="ajouterNumero(3)">
-                    <p>3</p>
-                </button>
-                <button onclick="ajouterNumero(4)">
-                    <p>4</p>
-                </button>
-                <button onclick="ajouterNumero(5)">
-                    <p>5</p>
-                </button>
-                <button onclick="ajouterNumero(6)">
-                    <p>6</p>
-                </button>
-                <button onclick="ajouterNumero(7)">
-                    <p>7</p>
-                </button>
-                <button onclick="ajouterNumero(8)">
-                    <p>8</p>
-                </button>
-                <button onclick="ajouterNumero(9)">
-                    <p>9</p>
-                </button>
-                <button onclick="ajouterNumero('.')">
-                    <p>.</p>
-                </button>
-            </div>
-            <div class="sign">
-                <button onclick="ajouterSigne('/')"><p>/</p></button>
-                <button onclick="ajouterSigne('-')"><p>-</p></button>
-                <button onclick="ajouterSigne('+')"><p>+</p></button>
-                <button onclick="ajouterSigne('*')"><p>*</p></button>
-                <button onclick="calculResult()"><p>=</p></button>
-                <button onclick="suppression()"><p>Delete</p></button>
-            </div>
+
+        <!-- Clavier -->
+        <div class="clavier grid grid-cols-4 gap-2">
+            <!-- Boutons numériques -->
+            <button onclick="ajouterNumero(7)" class="bg-gray-300 p-4 text-xl rounded">7</button>
+            <button onclick="ajouterNumero(8)" class="bg-gray-300 p-4 text-xl rounded">8</button>
+            <button onclick="ajouterNumero(9)" class="bg-gray-300 p-4 text-xl rounded">9</button>
+            <button onclick="ajouterSigne('/')" class="bg-orange-400 p-4 text-xl text-white rounded">/</button>
+
+            <button onclick="ajouterNumero(4)" class="bg-gray-300 p-4 text-xl rounded">4</button>
+            <button onclick="ajouterNumero(5)" class="bg-gray-300 p-4 text-xl rounded">5</button>
+            <button onclick="ajouterNumero(6)" class="bg-gray-300 p-4 text-xl rounded">6</button>
+            <button onclick="ajouterSigne('*')" class="bg-orange-400 p-4 text-xl text-white rounded">*</button>
+
+            <button onclick="ajouterNumero(1)" class="bg-gray-300 p-4 text-xl rounded">1</button>
+            <button onclick="ajouterNumero(2)" class="bg-gray-300 p-4 text-xl rounded">2</button>
+            <button onclick="ajouterNumero(3)" class="bg-gray-300 p-4 text-xl rounded">3</button>
+            <button onclick="ajouterSigne('-')" class="bg-orange-400 p-4 text-xl text-white rounded">-</button>
+
+            <button onclick="ajouterNumero(0)" class="bg-gray-300 p-4 text-xl rounded col-span-2">0</button>
+            <button onclick="ajouterNumero('.')" class="bg-gray-300 p-4 text-xl rounded">.</button>
+            <button onclick="ajouterSigne('+')" class="bg-orange-400 p-4 text-xl text-white rounded">+</button>
+
+            <!-- Fonctions de la calculatrice -->
+            <button onclick="suppression()" class="bg-red-400 p-4 text-xl text-white rounded col-span-2">C</button>
+            <button onclick="calculResult()" class="bg-green-500 p-4 text-xl text-white rounded col-span-2">=</button>
         </div>
     </div>
+
     <script src="./script.js"></script>
 </body>
 

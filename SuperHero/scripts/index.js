@@ -17,6 +17,44 @@
 </div> */
 
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  const konamiCode = [
+      "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+      "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
+      "b", "a"
+  ];
+
+  let konamiCodePosition = 0;
+
+  document.addEventListener('keydown', (e) => {
+
+      if (e.key === konamiCode[konamiCodePosition]) {
+          konamiCodePosition++;
+
+
+          if (konamiCodePosition === konamiCode.length) {
+              revealSecretIdentity();
+              konamiCodePosition = 0;
+          }
+      } else {
+          konamiCodePosition = 0;
+      }
+  });
+
+  function revealSecretIdentity() {
+      const secretIdentityElements = document.querySelectorAll('.secret-identity');
+      secretIdentityElements.forEach(element => {
+          element.style.display = 'block';
+          element.classList.add('fade-in');
+      });
+  }
+
+
+
+});
+let globalHeroes=[]
+let globalPowers=[]
+
 async function getHeroes() {
   const url = "/data/superheroes.json";
   try {
@@ -26,6 +64,8 @@ async function getHeroes() {
     }
     const data = await response.json();
     console.log(data);
+    globalHeroes=data.superheroes;
+    globalPowers=data.powers
     return { superheroes: data.superheroes, powers: data.powers };
   } catch (error) {
     console.error("Une erreur est survenue lors du chargement du JSON", error);
@@ -34,17 +74,43 @@ async function getHeroes() {
 }
 
 
-async function displayHeroes() {
-  const { superheroes, powers } = await getHeroes();
+async function displayHeroes(superheroes = globalHeroes, powers = globalPowers) {
   const container = document.getElementById('heroes-container'); 
-
+  container.innerHTML=""
   superheroes.forEach(hero => {
     const heroCard = superheroesTemplate(hero, powers);
     container.appendChild(heroCard);
   });
+
 }
 
 
-displayHeroes();
 
-  
+
+function searchHero(){
+let searchInput = document.getElementById("search");
+
+searchInput.addEventListener('input',(e)=>{
+let searchInputValue=e.target.value;
+if (searchInputValue.length>= 2){
+  const powerFilter =globalPowers.filter((power)=>power.power.toString().toLowerCase().includes(searchInputValue.toLowerCase()));
+  const filteredHeroes = globalHeroes.filter(hero => 
+    powerFilter.some(power => power.heroId === hero.id)
+  );
+
+  displayHeroes(filteredHeroes)
+}
+else{
+  displayHeroes() 
+}
+})
+
+
+
+} 
+
+document.addEventListener('DOMContentLoaded', async (event) => {
+  await getHeroes();
+  displayHeroes();
+  searchHero();
+});

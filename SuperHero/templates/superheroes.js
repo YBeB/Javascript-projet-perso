@@ -1,29 +1,40 @@
-function superheroesTemplate(hero,powers) {
-  const { heroid, id, name, secretIdentity, age, portrait } = hero;
+function superheroesTemplate(hero, powers) {
+  const { heroid, id, name, secretIdentity, age, portrait, rentalPoints } =
+    hero;
   const heroPowers = powers.filter((power) => power.heroId === id);
-  
+
   const profilePicture = `/assets/superheroes/${portrait}`;
 
-  const profileLink = `superhero.html?id=${id}`;
 
   let card = document.createElement("div");
   card.classList.add("card");
+
+
 
   let profileImage = document.createElement("img");
   profileImage.classList.add("hero-photo");
   profileImage.src = profilePicture;
 
-  let heroName = document.createElement("p");
+  let heroName = document.createElement("h1");
   heroName.classList.add("hero-name");
-  heroName.textContent = `Name:${name}`;
+  heroName.textContent = `${name}`;
 
+  let secretName=document.createElement('p');
+  secretName.textContent=`${secretIdentity}`
+  secretName.classList.add('secret-identity')
   let heroAge = document.createElement("p");
   heroAge.classList.add("age");
   heroAge.textContent = `Age : ${age}`;
+  let heroCredit = document.createElement("p");
+  heroCredit.classList.add("credit");
+  heroAge.textContent = `Rental point : ${rentalPoints} points`;
+
 
   card.appendChild(profileImage);
   card.appendChild(heroName);
   card.appendChild(heroAge);
+  card.appendChild(heroCredit);
+  card.appendChild(secretName)
   heroPowers.forEach((power) => {
     let heroSuperPower = document.createElement("p");
     heroSuperPower.classList.add("superpower");
@@ -31,12 +42,10 @@ function superheroesTemplate(hero,powers) {
     heroSuperPower.textContent = `Superpower:${power.power}`;
     heroSuperPower.classList.add("superpower");
 
-    let imgSuperPower = new Image();
+    let imgSuperPower = document.createElement("img");
     imgSuperPower.src = `/assets/powers/${power.image}`;
-    imgSuperPower.classList.add('icon')
+    imgSuperPower.classList.add("icon");
 
-
-    
     card.appendChild(heroSuperPower);
     card.appendChild(imgSuperPower);
   });

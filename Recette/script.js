@@ -22,11 +22,7 @@ parsedStoredRecipe=[]
 
 }
 
-  console.log(
-    "titre : " + titleValue,
-    "ingredient : " + ingredientValue,
-    "Etape : " + stepValue
-  );
+
   if (titleValue == "") {
     titleInput.style.border = "red 1px solid";
     errorTitle.style.display="block"
@@ -48,10 +44,22 @@ parsedStoredRecipe=[]
     stepInput.style.border = "none";
     errorStep.style.display="none";
   }
+
+  const recipeAllJs={titre: titleValue ,ingredient:ingredientValue,etapes:stepValue}
+
+  console.log(recipeAllJs)
+  parsedStoredRecipe.push(recipeAllJs)
+
+  console.log(parsedStoredRecipe);
+
+  localStorage.setItem("Recipe",JSON.stringify(parsedStoredRecipe))
 }
 
 function deleteRecipe() {}
 
-function displayRecipe() {}
+function displayRecipe() {
+
+
+}
 
 createButton.addEventListener("click", createRecipe);

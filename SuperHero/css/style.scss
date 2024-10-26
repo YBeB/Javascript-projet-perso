@@ -1,68 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
-body{padding: 0px;
-margin: 0px;
-}
-header{
-background:#a0e1f5;
-border-bottom: 15px solid rgb(245, 151, 151);
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+header {
+    background: #a0e1f5;
+    border-bottom: 15px solid rgb(245, 151, 151);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+section {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #2980b9;
+    }
+}
+
+
+
+
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
 
 .card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
-    text-align: center;
-    font-family: 'Comic Neue', sans-serif;
-    margin: 100px;
-
-}
-
-.hero-photo {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.hero-name {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: #333;
-}
-
-.age, .superpower {
-    font-size: 1.2em;
-    color: #666;
-    margin: 5px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px 0;
+    width: 200px;
+    margin: 50px;
+    padding: 50px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+
 }
 
 .icon {
     width: 75px;
-    height: 75px;
-    margin-right: 10px;
-    border-radius: 200px;
-    animation: parallax 3s infinite alternate;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 300px;
+
 }
-@keyframes parallax {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-5px);
-    }
+
+.hero-photo {
+    width: 150px;
 }
-.icon:hover {
-    transform: scale(1.5);
-     animation: both;
-     transition: transform 0.3s ease-in-out;
+.secret-identity{
+    display: none;
 }
-.hero-photo{
-    width:250px
-}
-section{display: flex;
-flex-wrap: wrap;}
